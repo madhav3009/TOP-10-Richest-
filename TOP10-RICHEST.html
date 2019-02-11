@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TOP10 Richest Person in World</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
+   <link rel="icon" type="image/png" href="Images/Top10.png">
+   
+  <style type="text/css">
+	
+	#logo{
+		width:40px;
+		height:40px;
+		margin-top:-10px;
+	  margin-right: 10px;
+	   }
+
+	 #logo:hover{border-radius:50%;}
+	  
+	 .navbar li{
+        
+          letter-spacing: 4px;
+          padding: 0 50px 0 50px;
+          border-right:1px solid white; 
+	        } 
+    .navbar li:hover{
+      border-bottom: 5px solid red;
+    }
+   
+
+    #loader{
+    
+    padding: 10% 0 100% 0;
+    justify-content:center; 
+    background-color:#333333;    
+    width: 100%;
+
+    }
+
+  .letter{
+      font-size:100px;
+      color:white;
+      font-family:tahoma;
+      text-shadow:2px 2px black;
+  } 
+
+.box{
+    display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+}
+
+.cupcakeCircle, .cupcakeInner, .cupcakeCore{
+     border-radius:100%;
+    
+    -moz-border-radius:50%;
+    
+}
+
+.cupcake, .letter, .cupcakeCircle, .cupcakeInner, .cupcakeCore{
+    flex:none;
+    -webkit-flex:none;
+    -moz-flex:none;
+    -ms-flex:none;
+    -o-flex:none;
+}
+
+.letter, .cupcakeCircle{
+    align-self:center;
+    -webkit-align-self:center;
+    -moz-align-self:center;
+    -o-align-self:center;
+    -ms-align-self:center;
+}
+.cupcakeCircle{
+    align-items:center;
+    -ms-align-items:center;
+    justify-content:center;
+    -ms-justify-content:center;
+    height:100px;
+    width:100px;
+    background-color:white;
+}
+
+.cupcakeInner{
+    align-self:center;
+    -ms-align-self:center;
+    justify-content:center;
+    -ms-justify-content:center;
+    height:50%;
+    width:50%;
+    background-color:#333333;
+    -webkit-animation-name:cupcakeAnimate;
+    -webkit-animation-duration:500ms;
+    -webkit-animation-direction:alternate;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-iteration-count:infinite;
+    
+}
+.cupcakeCore{
+    align-self:center;
+    -ms-align-self:center;
+    height:25%;
+    width:25%;
+    background-color:red;
+    -webkit-animation-name:coreAnimate;
+    -webkit-animation-duration:1s;
+    -webkit-animation-direction:alternate;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-iteration-count:infinite;
+}
+
+
+@-webkit-keyframes cupcakeAnimate{
+        to{ height:90%; width:90%; }
+}
+@keyframes cupcakeAnimate{
+    to{ height:90%; width:90%; }
+}
+
+@-webkit-keyframes coreAnimate{
+    to{ height:90%; width:90%; }
+}
+@keyframes coreAnimate{
+    to{ height:90%; width:90%; }
+}
+
+    .animate-bottom {
+     position: relative;
+     animation-name: animatebottom;
+     animation-duration: 1s;
+     }
+
+    @keyframes animatebottom { 
+     from{ bottom:-100px; opacity:0 } 
+     to{ bottom:0; opacity:1 }
+       }
+
+
+
+   #myDiv {
+    display: none;
+    text-align: center;
+   }
+   
+    
+    .jumbotron{
+    	background-image:url("Images/money.png");
+   }
+    
+    .jumbotron h1{
+        
+        font-weight:bold;
+        font-family: Verdana, Geneva, sans-serif;
+        text-decoration:underline;
+        text-shadow:3px 2px white;
+    	letter-spacing:20px;
+    	 }  
+    	
+    input[type=image]:hover{
+    	border:2px solid white;
+    	opacity:0.8;
+      }
+    
+   .lead{
+    text-shadow: 2px 2px black;
+ 	  background-color:red;
+   	font-size: 25px;
+   	}
+
+   .lead:hover{
+	  background-color: black;
+	  transition: 1.2s ease;
+    }
+
+    .modal-dialog{
+   
+    color:white;
+    font-size: 20px;
+    letter-spacing: 2px;
+    
+    }
+
+  .modal-body,.modal-header{
+    margin:0px 0px 0px 0px;
+  	background-color: black;
+  }
+
+.modal-header{text-transform: uppercase;}
+.close
+{color:white;
+opacity: 1;
+text-shadow: none;
+}
+
+.close:hover{color:red;}
+
+
+
+</style>
+
+</head>
+
+<body onload="myFunction()">
+
+<div id="loader" class ="box">
+  <span class = "letter">T</span>
+  <div class = "cupcakeCircle box">
+     <div class = "cupcakeInner box">
+       <div class = "cupcakeCore box">
+       </div>
+    </div>
+  </div>
+    
+    <span class = "letter box">P</span>
+    <span class = "letter box">1</span>
+    <span class = "letter box">0</span>
+  </div>  
+
+
+<div  id="myDiv" class="animate-bottom">
+
+  <nav class ="navbar navbar-inverse navbar-fixed-top" style="border-bottom:2px solid white">  
+  
+   <a class="navbar-brand" href="" ><img id="logo" src="Images/top10.png" ></a>  
+   
+   <div class="collapse navbar-collapse " id="MYNAVBAR">
+    <ul class="nav navbar-nav  ">
+  	<li><a href="">TRENDING</a></li>
+  	<li><a href="">INDIA</a></li>
+  	<li><a href="">ASIA</a></li>
+  	<li><a href="">WORLD</a></li>
+    <li class="dropdown">
+    <a href="" class="dropdown-toggle" data-toggle="dropdown">MORE<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+    	<li><a href="">BOLLYWOOD</a></li>
+    	<li><a href="">SPORTS</a></li>
+    	<li><a href="">HEALTH</a></li>
+    	<li><a href="">MOVIE</a></li>
+    </ul>	
+    </li>
+   </ul>
+  </div>
+  
+  <div class="navbar-drop">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MYNAVBAR">
+    	<span class="icon-bar"></span>
+    	<span class="icon-bar"></span>
+    	<span class="icon-bar"></span>
+    </button>  
+   </div>
+ </nav>
+
+<div class="jumbotron text-center">
+<h1 ><span>TOP10 PRESENTS</h1>
+</div>
+
+ <div class="container text-center">
+ <h1  style="color:red;letter-spacing: 15px;font-weight: bold;font-size:30px ">TOP 10 RICHEST PERSON IN WORLD</h1>
+ </div>
+
+<div class="container-fluid text-center" style="background-color:black" >
+  <div class="row">
+    <div class=col-sm-6>
+    <input type="image" src="Images/1.png" style="width: 100%;height:400px" data-toggle="modal" data-target="#1"></input>
+   	 <div class="itemcontent">
+       <h1 style="color:white;letter-spacing:15px;font-family:ScriptMtBold"><p class="lead">#1 JEFF BEZOS</p></h1>
+     </div>
+    </div>
+   <div class="col-sm-6">	
+   	 <input type="image" src="Images/2.png"style="width:100%;height:400px" data-toggle="modal" data-target="#2"></inputs>
+   	  <div class="itemcontent">
+      <h1 style="color:white;letter-spacing: 15px;font-family:ScriptMtBold"><p class="lead">#2 BILL GATES</p></h1>
+      </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class=col-sm-6>	
+   	  <input type="image" src="Images/3.png"style="width: 100%;height:400px" data-toggle="modal" data-target="#3" >
+   	   <div class="itemcontent">
+       <h1 style="color:white;letter-spacing:15px;font-family:ScriptMtBold"><p class="lead">#3 WARREN BUFFETT</p></h1>
+       </div>
+     </div>
+   <div class="col-sm-6">	
+   	 <input type="image" src="Images/4.jpg"style="width:100%;height:400px" data-toggle="modal" data-target="#4" >
+   	  <div class="itemcontent">
+      <h1 style="color:white;letter-spacing: 5px;font-family:ScriptMtBold"><p class="lead">#4 BERNARD ARNAULT</p></h1>
+      </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class=col-sm-6>	
+   	  <input type="image" src="Images/5.png"style="width: 100%;height:400px" data-toggle="modal" data-target="#5">
+   	   <div class="itemcontent">
+       <h1 style="color:white;letter-spacing:5px;font-family:ScriptMtBold"><p class="lead">#5 MARK ZUCKERBERG</p></h1>
+       </div>
+     </div>
+   <div class="col-sm-6">	
+   	 <input type="image" src="Images/6.jpg"style="width:100%;height:400px" data-toggle="modal" data-target="#6">
+   	  <div class="itemcontent">
+      <h1 style="color:white;letter-spacing: 5px;font-family:ScriptMtBold"><p class="lead">#6 AMANCIO ORTEGA</p></h1>
+      </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class=col-sm-6>	
+   	  <input type="image" src="Images/7.jpg"style="width: 100%;height:400px" data-toggle="modal" data-target="#7">
+   	   <div class="itemcontent">
+       <h1 style="color:white;letter-spacing:5px;font-family:ScriptMtBold"><p class="lead">#7 CARLOS SLIM HELU</p></h1>
+       </div>
+     </div>
+   <div class="col-sm-6">	
+   	 <input type="image" src="Images/8.jpg"style="width:100%;height:400px" data-toggle="modal" data-target="#8">
+   	  <div class="itemcontent">
+      <h1 style="color:white;letter-spacing: 15px;font-family:ScriptMtBold"><p class="lead">#8 CHARLES KOCH</p></h1>
+      </div>
+      </div>
+   </div>
+   <div class="row">
+    <div class=col-sm-6>	
+   	  <input type="image"src="Images/9.jpg"style="width: 100%;height:400px"data-toggle="modal" data-target="#9"  >
+   	   <div class="itemcontent">
+       <h1 style="color:white;letter-spacing:15px;font-family:ScriptMtBold"><p class="lead">#9 DAVID KOCH</p></h1>
+       </div>
+     </div>
+   <div class="col-sm-6">	
+   	 <input type="image" src="Images/10.jpg" style="width:100%;height:400px" data-toggle="modal" data-target="#10">
+   	  <div class="itemcontent">
+      <h1 style="color:white;letter-spacing: 15px;font-family:ScriptMtBold"><p class="lead">#10 LARRY ELLISON</p></h1>
+      </div>
+      </div>
+   </div>
+   
+   <div id="1" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/1..jpg"  style="width:100%;height: 400px">
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#1 JEFF BEZOS<br>$112 B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>American entrepreneur Jeff Bezos is the founder and chief executive officer of Amazon.com and owner of 'The Washington Post.'</li><br>
+        	<li>Bezos opened Amazon.com, named after the meandering South American River, on July 16, 1995.</li><br>
+        	<li>Amazon received its first major publicity through Yahoo founder Jerry Yang.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+ 
+  <div id="2" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/2..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#2 BILL GATES<br>$90B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li> Bill Gates is an American business magnate, investor, author, philanthropist, and humanitarian. He is best known as the principal founder of Microsoft Corporation.</li><br>
+        	<li>In April 2018, Gates announced that he was teaming with Google co-founder Larry Page to provide $12 million in funding for a universal flu vaccine.</li><br>
+        	<li>In early 2018, Gates achieved another distinction with the announcement he would guest star on an episode of The Big Bang Theory.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+
+ <div id="3" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/3..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#3 WARREN BUFFETT<br>$ 84B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Warren Edward Buffett is an American business magnate, investor, speaker and philanthropist who serves as the chairman and CEO of Berkshire Hathaway. He is considered one of the most successful investors in the worl</li><br>
+        	<li>Buffett has been the chairman and largest shareholder of Berkshire Hathaway since 1970, and he has been referred to as the "Wizard", "Oracle", or "Sage" of Omaha by global media outlets</li><br>
+        	<li>He is noted for his adherence to value investing and for his personal frugality despite his immense wealth</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+
+ <div id="4" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/4..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#4 BERNARD ARNAULT<br>$ 72B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Bernard Jean Étienne Arnault is a French business magnate, an investor, and art collector. </li><br>
+        	<li>Arnault is the chairman and chief executive officer (CEO) of LVMH, the world's largest luxury-goods company. He is the richest person in Europe</li><br>
+        	<li>In April 2018, he also became the richest person in fashion, toppling Zara's Amancio Ortega</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+ <div id="5" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/5..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#5 MARK ZUCKERBERG<br>$ 71B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Mark Elliot Zuckerberg is an American technology entrepreneur and philanthropist.</li><br>
+        	<li>He is known for co-founding and leading Facebook as its chairman and chief executive officer.</li><br>
+        	<li>On February 4, 2004, Zuckerberg launched Facebook from his Harvard dormitory room.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+ <div id="6" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/6..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#6 AMANCIO ORTEGA <br>$ 70B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Amancio Ortega is a Spanish billionaire businessman. </li><br>
+        	<li>He is the founder and former chairman of Inditex fashion group, best known for its chain of Zara clothing and accessories shops.</li><br>
+        	<li>In 2009, Zara was part of the Inditex group (Industrias de Diseño Textil Sociedad Anónima), of which Ortega owned 59.29%, and aside from over 6,000 stores included the brands Zara, Massimo Dutti, Oysho, Zara Home, Kiddy's Class, Tempe, Stradivarius, Pull and Bear, Bershka and has more than 92,000 employees.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+ <div id="7" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/7..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#7 CARLOS SLIM HELU<br>$ 68B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Carlos Slim Helú is a Mexican business magnate, engineer, investor and philanthropist</li><br>
+        	<li>His conglomerate includes education, health care, industrial manufacturing, transportation, real estate, media, energy, hospitality, entertainment, high-technology, retail, sports and financial services. </li><br>
+        	<li>As of 2016, he is the largest single shareholder of The New York Times Company.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+
+ <div id="8" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/8..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#8 CHARLES KOCH<br>$ 60B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Charles de Ganahl Koch is an American businessman, political donor and philanthropist. </li><br>
+        	<li>Koch has been co-owner, chairman, and chief executive officer of Koch Industries since 1967,</li><br>
+        	<li>The businesses produce a wide variety of well-known brands, such as Stainmaster carpet, the Lycra brand of spandex fiber, Quilted Northern tissue, and Dixie Cup.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+
+ <div id="9" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/9..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#9 DAVID KOCH<br>$ 60B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>David Hamilton Koch is an American businessman, philanthropist, political activist, and chemical engineer </li><br>
+        	<li>He joined the family business Koch Industries, the second-largest privately held company in the United States, in 1970. He became president of the subsidiary Koch Engineering in 1979, and became a co-owner of Koch Industries</li><br>
+        	<li>He served as an executive vice president until his retirement in 2018</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+
+ <div id="10" class="modal fade" role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="Images/10..jpg" style="width:100%;height: 400px" >
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <h2 class="modal-title">#10 LARRY ELLISON<br>$ 59B</h2>
+      </div>
+      <div class="modal-body">
+        <ul>
+        	<li>Lawrence Joseph Ellison (born August 17, 1944) is an American businessman, entrepreneur, and philanthropist who is a co-founder and the executive chairman and chief technology officer of Oracle Corporation</li><br>
+        	<li>While working at Ampex in the early 1970s, he became influenced by Edgar F. Codd's research on relational database design, which led in 1977 to the formation of what became Oracle. </li><br>
+        	<li>Oracle became a successful database vendor to mid- and low-range systems, competing with Sybase and Microsoft SQL Server, which led to Ellison being listed by Forbes as one of the richest men in the world.</li><br>
+        </ul>
+      </div>
+      
+        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">CLOSE</button>
+     
+    </div>	
+   	</div>
+    
+</div>
+ 
+
+
+ 
+<div id="end" style="background-color: black;color:white">
+© Copyright 2019 : Top10 Website | Powered by : Madhav.<br>
+<span id="top" ><a href="#myDiv"><span style="font-size:50px;text-decoration: none;">^</a></span>
+</div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+
+<script>
+
+function myFunction() {
+  
+var myVar;
+
+  myVar = setTimeout(showPage, 4000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+	</script>
+</body>
+</html>
